@@ -1,0 +1,52 @@
+.task{
+    display: flex;
+    align-items: center;
+    // padding: 10px 0px;
+    // border-bottom: 1px solid #E8E8E8;
+    // border-top: 1px solid #E8E8E8;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+
+    &__checkbox{
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #E8E8E8;
+        box-sizing: border-box;
+        border-radius: 50%;
+        background-color: transparent;
+        transition-duration: 0.3s;
+
+        margin-right: 10px;
+        
+
+    }
+    &.checked{
+     
+        .task__name{
+            text-decoration: line-through;
+        }
+    }
+    &__name{
+        flex: 1 1 auto;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &__close{
+        opacity: 0;
+        visibility: hidden;
+        font-size: 25px;
+        background-color: transparent;
+        transform: rotate(45deg);
+        transition-duration: 0.3s;
+    }
+    &:hover{
+        .task__close{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.todo-sidebar{
+    padding: 58px 20px 30px 20px;
+    width: 200px;
+    height: 100%;
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    transition-duration: 0.5s;
+
+    &__folders{
+        flex: 1 1 auto;
+        margin: 38px 0px 20px 0px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+.folder__icon_img{
+    display: flex;
+    align-items: center;
+}
+
+.add-folder{
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    color: #767676;
+
+    &__icon{
+        font-size: 23px;
+        line-height: 1;
+        height: 100%;
+        padding-bottom: 5px;
+    }
+    &__text{
+        margin-left: 10px;
+        font-size: 14px;
+    }
+}
+
+.todo-open{
+    display: none;
+   
+}
+
+@media (max-width:800px) {
+    
+    .todo-open{
+        display: block;
+        // position: absolute;
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        margin-bottom: 20px;
+        svg{
+        width: 100%;
+        height: 100%;
+        }
+    }
+    .todo-sidebar{
+        overflow: hidden;
+        padding: 58px 10px 30px 10px;
+        width: 50px;
+        align-items : center;
+        
+        .todo-sidebar__header{
+            width: 36px;
+            overflow: hidden;
+        }
+        .list{
+            overflow: hidden;
+            width: 36px;
+        }
+        .list__delete{
+            display: none;
+        }
+        .folder{
+            width: 200px;
+        }
+
+        &__folders{
+            margin-top: 10px;
+        }
+        &.open{
+            width: 200px;
+            
+        }
+        &__footer{
+            
+            overflow: hidden;
+            width: 15px;
+        }
+    }
+    .add-folder{
+        // width: 11px;
+        margin: 0 auto;
+        transition-duration: 0.3s;
+        &__text{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            // display: none;
+        }
+    }
+    .open{
+        .todo-sidebar__footer{
+            width: 100%;
+        }
+        .todo-open{
+            align-self: flex-end;
+        }
+
+         .todo-sidebar__header{
+            width: 100%;
+            overflow: hidden;
+        }
+        .list{
+            overflow: hidden;
+            width: 100%;
+        }
+        .list__delete{
+            display: none;
+        }
+        .folder{
+            width: 100%;
+        }
+        .todo-sidebar__folders{
+            width: 100%;
+        }
+        .list__delete{
+            display: block;
+        }
+    }
+}
