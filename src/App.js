@@ -8,23 +8,19 @@ import './scss/null.scss'
 import React from 'react';
 import { useState, useEffect } from 'react/cjs/react.development';
 
-Storage.prototype.get = function(key) {
-  return  JSON.parse(this.getItem(key));
+// Storage.prototype.get = function(key) {
+//   return  JSON.parse(this.getItem(key));
   
-}
-Storage.prototype.set = function(key, obj) {
-  return this.setItem(key, JSON.stringify(obj))
-}
+// }
+// Storage.prototype.set = function(key, obj) {
+//   return this.setItem(key, JSON.stringify(obj))
+// }
 
 function App() {
   const [activeFolder, setActiveFolder] = useState([])
   const [activeTasks, setActiveTasks] = useState([])
-  const [folders, setFolders] = useState(
-    localStorage.get('folders') ? localStorage.get('folders') : []
-  );
-  const [foldersTasks, setFoldersTasks] = useState(
-    localStorage.get('tasks') ? localStorage.get('tasks') : []
-  );
+  const [folders, setFolders] = useState([]);
+  const [foldersTasks, setFoldersTasks] = useState([]);
   const [selectedList, selectList] = useState('all')
   
   const [openSidebar, setOpenSidebar] = useState(false)
@@ -32,9 +28,9 @@ function App() {
 
 
   const addFolder = (obj) => {
-      if(!folders.find(folder => folder.name === obj.name)){
-        setFolders((prev) => [...prev, obj])
-      }
+    if(!folders.find(folder => folder.name === obj.name)){
+      setFolders((prev) => [...prev, obj])
+    }
   }
   
 
@@ -108,18 +104,17 @@ function App() {
   }, [selectedList, foldersTasks])
 
   useEffect(() => {
-    localStorage.set('folders', folders)
+    // localStorage.set('folders', folders)
   }, [folders])
 
   useEffect(() => {
-    localStorage.set('tasks', foldersTasks)
+    // localStorage.set('tasks', foldersTasks)
   }, [foldersTasks])
 
 
 
   return ( 
           <div className={openSidebar ? "todo open"  : 'todo'}>
-                
                 <Sidebar 
                   openSidebar={openSidebar}
                   setOpenSidebar={setOpenSidebar}
@@ -132,7 +127,6 @@ function App() {
 
                   <div className='todo__body'>
                     {
-                     
                       folders.length > 0 ?
                         selectedList !== 'all' ?
                         (
