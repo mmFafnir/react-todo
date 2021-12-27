@@ -8,13 +8,7 @@ import './scss/null.scss'
 import React from 'react';
 import { useState, useEffect } from 'react/cjs/react.development';
 
-Storage.prototype.get = function(key) {
-  return  JSON.parse(this.getItem(key));
-  
-}
-Storage.prototype.set = function(key, obj) {
-  return this.setItem(key, JSON.stringify(obj))
-}
+
 
 function App() {
   const [activeFolder, setActiveFolder] = useState([])
@@ -29,6 +23,13 @@ function App() {
   
   const [openSidebar, setOpenSidebar] = useState(false)
 
+  Storage.prototype.get = function(key) {
+    return  JSON.parse(this.getItem(key));
+    
+  }
+  Storage.prototype.set = function(key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+  }
 
 
   const addFolder = (obj) => {
