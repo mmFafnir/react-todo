@@ -1,10 +1,11 @@
-
-
+import React from 'react';
 import { useEffect } from 'react';
 import { useRef, useState } from 'react/cjs/react.development';
-import '../scss/folder.scss'
+
 import Button from './UI/Button/Button';
 import Task from './UI/Task/Task';
+
+import '../scss/folder.scss'
 
 function Folder({
     folder, 

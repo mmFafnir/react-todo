@@ -1,10 +1,10 @@
+import React from 'react';
+import { useRef } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 import Button from './UI/Button/Button';
 
-
 import '../scss/modal.scss'
-import { useRef } from 'react/cjs/react.development';
-import { useState } from 'react';
 
 
 let colors = ['C9D1D3', '42B883', '64C4ED', 'FFBBCC', 'B6E6BD', 'C355F5', '09011A', 'FF6464']

@@ -1,5 +1,4 @@
-
-
+import React from 'react'
 
 
 import '../scss/list.scss'
@@ -12,7 +11,7 @@ function List({name, color, onClick, active, deleteFolder}) {
    <li className={active ? 'list active' : 'list'}>
     <button onClick={onClick} className={ 'folder'}>
         <div className='folder__icon' style={{backgroundColor: color}}></div>
-        <p className='folder__text'>
+        <p className='folder__text'>  
             {name}
         </p>
     </button>

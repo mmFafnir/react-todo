@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 
 import './App.scss';
 import './scss/null.scss'
+import React from 'react';
 import { useState, useEffect } from 'react/cjs/react.development';
 
 Storage.prototype.get = function(key) {
