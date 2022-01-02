@@ -26,19 +26,19 @@ function Modal({setModalOpen, addFolder, lengthFolders}) {
 
 
   return ( 
-    <div className='modal'>
+    <form className='modal'>
       <button onClick={setModalOpen} className='modal__close'>+</button>
       <input ref={inputText} className={error ? 'error' : ''}  type='text' placeholder='Название папки'/>
       <div className='modal__colars'>
         {colors.map((color, index )=> (
-          <div className='color'>
+          <div key={index} className='color'>
             <input onClick={() => setCurrentColor(`#${color}`)} type='radio' value={`#${color}`} name="color" id={`color${index}`} defaultChecked={index === 0 ? true : false} />
             <label style={{backgroundColor: `#${color}`}} htmlFor={`color${index}`}></label>
           </div>
         ))}
       </div>
       <Button onClick={validFolder}>Добавить</Button>
-    </div>
+    </form>
 
   );
 }
