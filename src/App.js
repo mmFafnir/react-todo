@@ -1,20 +1,21 @@
+import React from 'react';
+import { useState, useEffect } from 'react/cjs/react.development';
 import axios from 'axios';
+
 
 import Folder from './components/Folder';
 import Sidebar from './components/Sidebar';
 
 import './App.scss';
 import './scss/null.scss'
-import React from 'react';
-import { useState, useEffect } from 'react/cjs/react.development';
 
-// Storage.prototype.get = function(key) {
-//   return  JSON.parse(this.getItem(key));
+Storage.prototype.get = function(key) {
+  return  JSON.parse(this.getItem(key));
   
-// }
-// Storage.prototype.set = function(key, obj) {
-//   return this.setItem(key, JSON.stringify(obj))
-// }
+}
+Storage.prototype.set = function(key, obj) {
+  return this.setItem(key, JSON.stringify(obj))
+}
 
 function App() {
   const [activeFolder, setActiveFolder] = useState([])
@@ -96,6 +97,10 @@ function App() {
   }
   
 
+  useEffect(() => {
+    setFolders(localStorage.get('folders'));
+    setFoldersTasks(localStorage.get('tasks'))
+  }, [])
   
   useEffect(() => {
     if(selectedList !== 'all'){
@@ -104,13 +109,12 @@ function App() {
   }, [selectedList, foldersTasks])
 
   useEffect(() => {
-    // localStorage.set('folders', folders)
+    localStorage.set('folders', folders)
   }, [folders])
 
   useEffect(() => {
-    // localStorage.set('tasks', foldersTasks)
+    localStorage.set('tasks', foldersTasks)
   }, [foldersTasks])
-
 
 
   return ( 
