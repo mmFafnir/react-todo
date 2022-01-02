@@ -1,6 +1,5 @@
-import React from 'react';
-import { useRef } from 'react/cjs/react.development';
-import { useState } from 'react';
+import React from 'react'; 
+import { useState, useRef } from 'react';
 
 import Button from './UI/Button/Button';
 

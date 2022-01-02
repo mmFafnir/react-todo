@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
@@ -25,7 +25,7 @@ function App() {
   const [selectedList, selectList] = useState('all')
   
   const [openSidebar, setOpenSidebar] = useState(false)
-
+  console.log(folders);
 
 
   const addFolder = (obj) => {
@@ -98,8 +98,8 @@ function App() {
   
 
   useEffect(() => {
-    setFolders(localStorage.get('folders'));
-    setFoldersTasks(localStorage.get('tasks'))
+    setFolders(localStorage.get('folders') ? localStorage.get('folders') : []);
+    setFoldersTasks(localStorage.get('tasks') ? localStorage.get('tasks') : [])
   }, [])
   
   useEffect(() => {
