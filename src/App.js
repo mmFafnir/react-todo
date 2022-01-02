@@ -25,7 +25,6 @@ function App() {
   const [selectedList, selectList] = useState('all')
   
   const [openSidebar, setOpenSidebar] = useState(false)
-  console.log(folders);
 
 
   const addFolder = (obj) => {
