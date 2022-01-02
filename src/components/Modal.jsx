@@ -26,7 +26,7 @@ function Modal({setModalOpen, addFolder, lengthFolders}) {
 
 
   return ( 
-    <form className='modal'>
+    <div className='modal'>
       <button onClick={setModalOpen} className='modal__close'>+</button>
       <input ref={inputText} className={error ? 'error' : ''}  type='text' placeholder='Название папки'/>
       <div className='modal__colars'>
@@ -38,7 +38,7 @@ function Modal({setModalOpen, addFolder, lengthFolders}) {
         ))}
       </div>
       <Button onClick={validFolder}>Добавить</Button>
-    </form>
+    </div>
 
   );
 }
